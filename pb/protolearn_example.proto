@@ -1,0 +1,21 @@
+syntax = "proto3"; //声明语法版本
+package myProtoPackage; //用于proto文件内部的命名空间
+option go_package = "a/b/c/person;person"; //a/b/c/person表示包名 这里的;person的person是别名，用于import
+//以上最终解释为 import person "a/b/c/person"
+
+message Home {
+  string address = 1;
+  repeated myProtoPackage.Person persons = 2 ; //类型的使用 是切片
+  message V {//嵌套类型
+    string name = 1 ;
+  }
+}
+
+message Person {//定义消息体
+  string name = 1; //1表示唯一标识
+  int32 age = 2; //类型参考官网
+  bool sex = 3;
+  repeated string testSlice = 4; //声明一个切片
+  map<string, string> testMap = 5; //声明一个map
+
+}

@@ -1,5 +1,6 @@
 * b站教学视频 https://www.bilibili.com/video/BV1Ev411w7yu
 * https://www.bilibili.com/video/BV1D34y1Q7aH
+* https://github.com/piexlmax/1010class
 * 官网文档
 
 * (安装protoc) brew install protobuf
@@ -23,3 +24,5 @@
     * 调用client方法
     * 返回值
 
+## proto文件语法
+* 参考protolearn_example.proto文件
