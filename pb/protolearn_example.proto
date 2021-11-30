@@ -9,6 +9,7 @@ message Home {
   message V {//嵌套类型
     string name = 1 ;
   }
+  V v = 3; //使用嵌套类型
 }
 
 message Person {//定义消息体
