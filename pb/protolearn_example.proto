@@ -24,4 +24,15 @@ message Person {//定义消息体
     male = 0;
     female = 1;
   }
+  oneof TestOneOf {//用oneof来包裹一段落，该段落中的字段，只需要一个被赋值即可,其他会被清空 ，具体实现为一个接口，有三个实现而已
+    string one = 6;
+    string two = 7;
+    string three = 8;
+  }
+}
+
+service SearchService {//定义服务，参数和返回值 都可以stream化
+  rpc Search(Person) returns (Person);
+  rpc Search1(stream Person) returns (Person);
+  rpc Search2(Person) returns (stream Person);
 }
