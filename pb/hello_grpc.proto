@@ -1,0 +1,15 @@
+syntax = "proto3"; //说明当前语法
+
+option go_package = "./;hello_grpc"; //包名称 ./是和相关路径有关系，所以需要cd pb 再执行生成
+
+message Req {
+  string message = 1;
+}
+
+message Res {
+  string message = 1;
+}
+
+service HelloGRPC {
+  rpc SayHi(Req) returns (Res);
+}
