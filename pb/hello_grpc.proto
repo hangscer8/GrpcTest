@@ -1,7 +1,7 @@
 syntax = "proto3"; //说明当前语法
 
 option go_package = "./;hello_grpc"; //包名称 ./是和相关路径有关系，所以需要cd pb 再执行生成
-
+package myHelloProto;
 message Req {
   string message = 1;
 }

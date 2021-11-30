@@ -1,5 +1,7 @@
 syntax = "proto3"; //声明语法版本
+
 package myProtoPackage; //用于proto文件内部的命名空间
+
 option go_package = "a/b/c/person;person"; //a/b/c/person表示包名 这里的;person的person是别名，用于import
 //以上最终解释为 import person "a/b/c/person"
 
