@@ -2,6 +2,9 @@ syntax = "proto3"; //说明当前语法
 
 option go_package = "./;hello_grpc"; //包名称 ./是和相关路径有关系，所以需要cd pb 再执行生成
 package myHelloProto;
+
+import "google/api/annotations.proto";
+
 message Req {
   string message = 1;
 }
@@ -11,5 +14,10 @@ message Res {
 }
 
 service HelloGRPC {
-  rpc SayHi(Req) returns (Res);
+  rpc SayHi(Req) returns (Res){
+    option (google.api.http) = {
+      post : "/echo/hi"
+      body : "*" //accept body from json format
+    };
+  }
 }

@@ -25,5 +25,11 @@
     * 返回值
 
 ## proto文件语法
+
 * 参考protolearn_example.proto文件
 * https://www.bilibili.com/video/BV1av41137cp/?p=3&spm_id_from=pageDriver
+
+## grpc gateway使用
+
+在项目根目录下执行(先生成grpc的go_gen文件，在执行生成grpc-gateway的go_gen文件，不然会报错，HelloGRPCServer找不到)
+protoc -I . --grpc-gateway_out . --grpc-gateway_opt logtostderr=true --grpc-gateway_opt paths=source_relative pb/hello_grpc.proto
