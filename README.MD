@@ -33,3 +33,5 @@
 
 在项目根目录下执行(先生成grpc的go_gen文件，在执行生成grpc-gateway的go_gen文件，不然会报错，HelloGRPCServer找不到)
 protoc -I . --grpc-gateway_out . --grpc-gateway_opt logtostderr=true --grpc-gateway_opt paths=source_relative pb/hello_grpc.proto
+
+测试  curl -X POST --header "Content-Type: application/json" --data '{"message":"xyz"}' 127.0.0.1:18088/echo/hi
